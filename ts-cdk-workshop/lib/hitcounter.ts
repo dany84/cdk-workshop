@@ -4,8 +4,6 @@ import {Construct} from 'constructs'
 
 export interface HitCounterProps {
     downstream: lambda.IFunction;
-
-
     readCapacity?: number;
 }
 
@@ -21,8 +19,6 @@ export class HitCounter extends Construct {
         }
 
         super(scope, id);
-
-
 
         const table = new dynamodb.Table(this, 'Hits', {
             partitionKey: {name: 'path', type: dynamodb.AttributeType.STRING},
