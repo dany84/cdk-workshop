@@ -34,7 +34,7 @@ export class WorkshopPipelineStack extends cdk.Stack {
                     ENDPOINT_URL: deploy.hcViewerUrl
                 },
                 commands:[
-                    'curl -Ssf $ENDPOINT_URL'
+                 //   'curl -Ssf $ENDPOINT_URL'
                 ]
             }),
            /* new CodeBuildStep('TestAPIGatewayEndpoint', {
