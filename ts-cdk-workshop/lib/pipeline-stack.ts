@@ -9,7 +9,9 @@ export class WorkshopPipelineStack extends cdk.Stack {
         const pipeline = new CodePipeline(this, 'Pipeline', {
             pipelineName: 'WorkshopPipeline',
             synth: new ShellStep('Synth', {
-                input: CodePipelineSource.gitHub('dany84/cdk-workshop', 'main'),
+                input: CodePipelineSource.connection('dany84/cdk-workshop', 'main', {
+                    connectionArn: 'arn:aws:codestar-connections:sa-east-1:383827279863:connection/2fe91f14-1847-4ee5-a8fd-c0e859a7b05a'
+                }),
                 commands: [
                     'npm ci',
                     'npm run build',
