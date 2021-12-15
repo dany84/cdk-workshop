@@ -9,3 +9,5 @@ node_modules
 cdk.out
 
 !lambda/*.js
+
+!package-lock.json
