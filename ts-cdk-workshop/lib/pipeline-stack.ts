@@ -33,21 +33,21 @@ export class WorkshopPipelineStack extends cdk.Stack {
                 envFromCfnOutputs: {
                     ENDPOINT_URL: deploy.hcViewerUrl
                 },
-                commands:[
-                 //   'curl -Ssf $ENDPOINT_URL'
+                commands: [
+                    'curl -Ssf $ENDPOINT_URL'
                 ]
             }),
-           /* new CodeBuildStep('TestAPIGatewayEndpoint', {
+            new CodeBuildStep('TestAPIGatewayEndpoint', {
                 projectName: 'TestAPIGatewayEndpoint',
                 envFromCfnOutputs: {
                     ENDPOINT_URL: deploy.hcEndpoint
                 },
-                commands:[
+                commands: [
                     'curl -Ssf $ENDPOINT_URL',
                     'curl -Ssf $ENDPOINT_URL/hello',
-                    'curl -Ssf $ENDPOINT_URL/test',
+                    'curl -Ssf $ENDPOINT_URL/test'
                 ]
-            })*/
+            })
         );
 
     }

@@ -35,7 +35,7 @@ export class TsCdkWorkshopStack extends Stack {
             value: gateway.url
         })
 
-        this.hcEndpoint = new CfnOutput(this, 'TableViewerUrl', {
+        this.hcViewerUrl = new CfnOutput(this, 'TableViewerUrl', {
             value: tv.endpoint
         });
     }
